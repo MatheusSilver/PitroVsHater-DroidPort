@@ -918,7 +918,7 @@ class PlayState extends MusicBeatState
 	function startCountdown():Void
 	{
 		#if mobileC
-		mcontrols.visible = true;
+		if (!FlxG.save.data.botplay) mcontrols.visible = true;
 		#end
 
 		inCutscene = false;
@@ -2471,8 +2471,8 @@ class PlayState extends MusicBeatState
 	
 			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
 			rating.screenCenter();
-			rating.y -= 50;
-			rating.x = coolText.x - 125;
+			rating.y -= -250;
+			rating.x = 65;
 			
 			if (FlxG.save.data.changedHit)
 			{

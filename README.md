@@ -1,61 +1,121 @@
-![Kade Engine logo](https://user-images.githubusercontent.com/26305836/110529589-4b4eb600-80ce-11eb-9c44-e899118b0bf0.png)
+Criadora deste mod, a comunidade de FNF de celular fraco te agradece imensamente por fazer o mod já otimizado
 
-[![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Windows?label=windows%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Macos?label=macOS%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts)  [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Linux?label=linux%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/KadeEngineWeb?label=html5&20build)](https://ci.appveyor.com/project/daniel11420/KadeEngineWeb) [![Discord](https://img.shields.io/discord/808039740464300104?label=discord)](https://discord.gg/MG6GQFh52U) [![GitHub issues](https://img.shields.io/github/issues/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/pulls) []() []()
+De agora em diante, teremos apenas coisinhas sobre como compilar...
 
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/KadeDev/Kade-Engine/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/KadeDev/Kade-Engine) ![Lines of code](https://img.shields.io/tokei/lines/github/KadeDev/Kade-Engine) ![Supported platforms](https://img.shields.io/badge/supported%20platforms-windows%2C%20macOS%2C%20linux%2C%20html5-blue) ![GitHub all releases](https://img.shields.io/github/downloads/KadeDev/Kade-Engine/total) ![GitHub](https://img.shields.io/github/license/KadeDev/Kade-Engine) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/KadeDev/Kade-Engine?include_prereleases&label=latest%20version) 
+# Wii Funkin Animado - porque sim!!!
+Sim, usei o mod do Wish I Could Care Less como base ok...
+Não... Não irei traduzir isso para inglês se quiser tradução, jogue no google tradutor por motivos de:
+Primeiro eu sou BR
+Segundo, eu não sou Gringo!!!
+Terceiro, esse tutorial contem coisas da Mic'd Up
 
-# Friday Night Funkin': Kade Engine
-## Friday Night Funkin'
-**Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
+# Como compilar essa parada toda?
+Bom... Vou copiar e colar um trem aqui que resolve, tem mais uns adicionais, mas que eu também vou colocar aqui.
 
-Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
-> Uh oh! Your tryin to kiss ur hot girlfriend, but her MEAN and EVIL dad is trying to KILL you! He's an ex-rockstar, the only way to get to his heart? The power of music... 
+Compilar o mod te dá acesso a pasta `/source`, permitindo que você faça coisas legais com algo em código aberto, ou então, sua própria leitura da animação jogável!
 
-## Kade Engine
-**Kade Engine** is a mod for Friday Night Funkin', including a full engine rework, replays, and more.
+(I recommend having a good idea on how to program. Compiling the mod is not for everyone!) - Frase Original do cara que escreveu isso
+E eu digo que não nescessariamente, eu nunca vi esses trens na vida, e deu pra fazer algo legal, então apenas digo: Vá com força meu Nobre!
 
-Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play in browser](https://funkin.puyo.xyz) ⋅ [latest stable release](https://github.com/KadeDev/Kade-Engine/releases/latest) ⋅ [latest development build (windows)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) ⋅ [latest development build (macOS)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts) ⋅ [latest development build (linux)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts)**
+### **Se você realmente quiser compilar, continue a leitura, se não... VAZA!!!**
 
-**REMEMBER**: This is a **mod**. This is not the vanilla game and should be treated as a **modification**. This is not and probably will never be official, so don't get confused.
+# Instalando os programas nescessários
 
-## Website ([KadeDev.github.io/kade-engine/](https://KadeDev.github.io/Kade-Engine/))
-If you're looking for documentation, changelogs, or guides, you can find those on the Kade Engine website.
+Primeiro, você precisa instalar Haxe e HaxelFlixel, FNF utilizou essa linguagem de programação não me julgue, julgue o NinjaMuffin99, ou não né...
 
-# Previews ([skip](#features))
+1. [Instale Haxe 4.1.5](https://haxe.org/download/version/4.1.5/) (Baixe a versão 4.1.5 ao invés da 4.2.0 ou então baixe isso e corra o risco de algumas extensões como a webm não funcionarem propriamente.)
+2. [Instale HaxeFlixel](https://haxeflixel.com/documentation/install-haxeflixel/) Depois de instalar Haxe
 
-![Tutorial (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113989685-fa5aea80-9850-11eb-9180-f5819a774c79.gif) ![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113990845-2c208100-9852-11eb-8e6d-f1c9e8439871.gif)
+Outras paradas que tu vai precisar (Geralmente isso varia de mod pra mod, então sempre leia o  `Project.xml` para saber exatamente o que baixar:
+```
+flixel
+flixel-addons
+flixel-ui
+hscript
+newgrounds
+```
+Para instalar basta abrir o prompt de comando e digitar: `haxelib install [library]` 
+exemplo: `haxelib install newgrounds` ou `haxelib install flixel`.
 
-![Roses (Hard) on Upscroll](https://user-images.githubusercontent.com/15311104/113993573-e31dfc00-9854-11eb-82ae-1f29dc8a0b04.png)
+Você tambem vai precisar de umas coisinhas a mais: (Sim isso tudo é nescessário)
+1. Baixe [git-scm] em (https://git-scm.com/downloads).
+2. Siga as instruções da pagina.
+3. Rode o código no cmd `haxelib git polymod https://github.com/larsiusprime/polymod.git` para instalar o Polymod.
+4. Rode o código no cmd `haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc` para instalar Discord RPC.
+5. Optional, mas eu recomendo: - Rode o código no cmd `haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons` para atualizar Flixel-Addons. Foi isso que corrigiu o bug da animação jogável.
 
-![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113991654-f4660900-9852-11eb-8c3d-f3927571f19b.png)
+Agora sim, dá pra dale, continue o tutorial.
 
-![He malding](https://user-images.githubusercontent.com/15311104/113993693-02b52480-9855-11eb-9975-eb8a7a1be8d1.png)
+# Adding `APIStuff.hx` into `/source` (A partir de agora, não irei mais traduzir)
 
-![Free Play selection screen](https://i.imgur.com/LR0eWIC.png)
+The API keys of the mod were gitignored so no one could post fake high scores onto the leaderboards in Newgrounds. Unfortunately, because this mod requires the `API` and `EncKey` values to compile, you will need to add a file called `APIStuff.hx` into `/source`.
 
-![Options Menu](https://i.imgur.com/LBXW9C1.png)
+1. Create a new text file called `APIStuff.hx` inside of the `/source` folder.
+2. Copy the following text:
+```haxe
+package;
+class APIStuff
+{
+	public static var API:String = "";
+	public static var EncKey:String = "";
+}
+```
+3. Paste the text into the APIStuff.hx file and save the file.
 
-# Features
+You should be good from there! Now, onto compiling!
 
- - **New Input System**
-	 - An improved input system, similar to Quaver or Etterna, with less delays, less dropped inputs and other improvements.
- - **More information during gameplay**
-	 - While you're playing, we show you information about how you're doing, such as your accuracy, combo break count, notes per second, and your grade/rating.
- - **Customizable keybinds**
-	 - Instead of being forced to use WASD and the arrow keys, you can customize the keybinds to any keys you want!
- - **Replays** (in beta)
-	 - Have you ever gotten a crazy score but didn't record? The replay system solves that: it automatically saves a "replay" of your gameplay every time you complete a song, which you can play back inside of the game. 
-	 - Replays just store information about what you're doing, they don't actually record the screen -- so they take up way less space on your disk than videos.
- - **Audio offset**
-	 - If your headphones are delayed, you can set an offset in the options menu to line the game up with the delay and play with synced audio like intended.
+# Compiling the Mod
 
-# Credits
-### Friday Night Funkin'
- - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
- - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art
- - [Kawai Sprite](https://twitter.com/kawaisprite) - Music
+<p align="center">
+	<a href="https://lime-ml.readthedocs.io/en/latest/" target="_blank"><img src="/art/limeLogo.png"></a>
+</p>
 
-This game was made with love to Newgrounds and its community. Extra love to Tom Fulp.
-### Kade Engine
-- [KadeDeveloper](https://twitter.com/KadeDeveloper) - Maintainer and lead programmer
-- [The contributors](https://github.com/KadeDev/Kade-Engine/graphs/contributors)
+## HTML Building:
+
+HTML Compiling currently does not work as Mic'd Up! currently requires desktop-only libraries to function properly.
+
+## Desktop Building:
+
+Desktop building can be a bit tedious. Each different version requires a different setup.
+
+### Linux Building:
+
+1. Open your machine's command prompt/terminal and navigate to your root folder of the mod. [An easy guide can be found here!](https://ninjamuffin99.newgrounds.com/news/post/1090480)
+2. Type `lime build linux -debug` to build the Linux version of the mod.
+3. Type `lime run linux -debug` to run the Linux version of the mod from the command prompt/terminal. (You can also run the mod from `funkin/export/debug/linux/bin`)
+
+### Mac Building:
+
+1. Open your machine's command prompt/terminal and navigate to your root folder of the mod. [An easy guide can be found here!](https://ninjamuffin99.newgrounds.com/news/post/1090480)
+2. Type `lime build mac -debug` to build the Mac version of the mod.
+3. Type `lime run mac -debug` to run the Mac version of the mod from the command prompt/terminal. (You can also run the mod from `funkin/export/debug/mac/bin`)
+
+### Windows Building:
+**THIS METHOD REQUIRES AROUND 22 GIGABYTES OF STORAGE.** (Só voltei aqui pra dizer que sim, esses são os famosos 23 GIGAS QUE VOCÊ PRECISA BAIXAR)
+1. Install [Visual Studio Community 2019](https://visualstudio.microsoft.com/downloads/).
+2. Open the installer and go to the individual workloads tab and download the following:
+```
+* C++ CMake tools for windows 
+* C++ Profiling tools 
+* C++ ATL for v142 build tools (x86 & x64)
+* C++ MFC for v142 build tools (x86 & x64)
+* C++/CLI support for v142 build tools (14.21)
+* C++ Modules for v142 build tools (x64/x86)
+* Clang Compiler for Windows
+* MSVC v140 - VS 2015 C++ build tools (v14.00) 
+* MSVC v141 - VS 2017 C++ x64/x86 build tools
+* MSVC v142 - VS 2019 C++ x64/x86 build tools
+* Windows 10 SDK (10.0.16299.0)
+* Windows 10 SDK (10.0.17134.0)
+* Windows SDK (10.0.17763.0)
+```
+3. Wait for the install to finish, which might take a while.
+4. Open your machine's command prompt/terminal and navigate to your root folder of the mod. [An easy guide can be found here!](https://ninjamuffin99.newgrounds.com/news/post/1090480)
+5. Once everything is installed, type `lime build windows -debug` to build the windows version of the mod.
+6. Type `lime run windows -debug` after the mod is compiled to run the windows version of the mod. (You can also run the mod from `funkin/export/debug/windows/bin`)
+
+# Yay você terminou!
+
+# Agradecimentos por parte do mod base deste
+- [gwebdev](https://github.com/GrowtopiaFli) Video code (Inclusive, recomendo que você passe aqui e leia sobre o webm se quiser saber mais sobre as cutscenes em vídeo)
+- [Marcos Zavasky] Sem GITHUB eu apenas copiei e colei o de cima ali, pelo port para PC, sim foi o contrário, e sim ele voltou para a Team Silver e sim, YOU HAVE BEEN TROLLED!

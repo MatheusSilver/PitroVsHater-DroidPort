@@ -419,7 +419,7 @@ class TitleState extends MusicBeatState
 					addMoreText('Matheus Silver');
 				else
 				{
-					addMoreText('Newgrounds');
+					addMoreText('Matheus Silver');
 					ngSpr.visible = true;
 				}
 			// credTextShit.text += '\nNewgrounds';
@@ -442,13 +442,13 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('Pitron');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Night');
+				addMoreText('vs');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				addMoreText('Haterzin'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();

@@ -104,7 +104,7 @@ class About extends Option
 	}
 	private override function updateDisplay():String
 	{
-		return "About";
+		return "Sobre";
 	}
 
 }
@@ -149,7 +149,7 @@ class CpuStrums extends Option
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.cpuStrums ? "Light CPU Strums" : "CPU Strums stay static";
+		return  FlxG.save.data.cpuStrums ? "CPU FAZ BRILHIN" : "CPU FICA CINZA";
 	}
 
 }
@@ -192,7 +192,7 @@ class GhostTapOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.ghost ? "Ghost Tapping" : "No Ghost Tapping";
+		return FlxG.save.data.ghost ? "New Input" : "Old Input";
 	}
 }
 
@@ -212,7 +212,7 @@ class AccuracyOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Accuracy " + (!FlxG.save.data.accuracyDisplay ? "off" : "on");
+		return "Precisao " + (!FlxG.save.data.accuracyDisplay ? "invisivel" : "visivel");
 	}
 }
 
@@ -232,7 +232,7 @@ class SongPositionOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Song Position " + (!FlxG.save.data.songPosition ? "off" : "on");
+		return "Marca TEMPO " + (!FlxG.save.data.songPosition ? "invisivel" : "visivel");
 	}
 }
 
@@ -292,7 +292,7 @@ class FlashingLightsOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Flashing Lights " + (!FlxG.save.data.flashing ? "off" : "on");
+		return "AntiEpilepsia " + (!FlxG.save.data.flashing ? "desligado" : "ligado");
 	}
 }
 
@@ -369,7 +369,7 @@ class FPSOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "FPS Counter " + (!FlxG.save.data.fps ? "off" : "on");
+		return "FPS " + (!FlxG.save.data.fps ? "invisivel" : "visivel");
 	}
 }
 
@@ -492,7 +492,7 @@ class RainbowFPSOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "FPS Rainbow " + (!FlxG.save.data.fpsRain ? "off" : "on");
+		return "FPS GAY " + (!FlxG.save.data.fpsRain ? "desligado" : "ligado");
 	}
 }
 
@@ -513,7 +513,7 @@ class NPSDisplayOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "NPS Display " + (!FlxG.save.data.npsDisplay ? "off" : "on");
+		return "NPS " + (!FlxG.save.data.npsDisplay ? "invisivel" : "visivel");
 	}
 }
 
@@ -555,7 +555,7 @@ class AccuracyDOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Accuracy Mode: " + (FlxG.save.data.accuracyMod == 0 ? "Accurate" : "Complex");
+		return "Precisao " + (FlxG.save.data.accuracyMod == 0 ? "Preciso" : "Complexo");
 	}
 }
 
@@ -647,5 +647,5 @@ class BotPlay extends Option
 	}
 	
 	private override function updateDisplay():String
-		return "BotPlay " + (FlxG.save.data.botplay ? "on" : "off");
+		return "BotPlay " + (FlxG.save.data.botplay ? "ligado" : "desligado");
 }

@@ -22,7 +22,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Continuar', 'Recomeçar', 'Arregar', 'Menu de Chart'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -137,7 +137,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to menu'];
+					menuItems = ['Recomeçar', 'Arregar', 'Menu de Chart'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -162,7 +162,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to menu'];
+					menuItems = ['Recomeçar', 'Arregar', 'Menu de Chart'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -186,11 +186,20 @@ class PauseSubState extends MusicBeatSubstate
 
 			switch (daSelected)
 			{
-				case "Resume":
+				case "Continuar":
 					close();
-				case "Restart Song":
+				case "Recomeçar":
 					FlxG.resetState();
-				case "Exit to menu":
+				case "Menu de Chart":
+					if (PlayState.useVideo)
+					{
+						GlobalVideo.get().stop();
+						PlayState.instance.remove(PlayState.instance.videoSprite);
+						PlayState.removedVideo = true;
+					}
+					Main.editor = true;
+					FlxG.switchState(new ChartingState());
+				case "Arregar":
 					if(PlayState.loadRep)
 					{
 						FlxG.save.data.botplay = false;

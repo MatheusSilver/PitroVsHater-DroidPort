@@ -26,40 +26,31 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
-			new DownscrollOption("Change the layout of the strumline."),
-			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
-			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
+			new DownscrollOption("Para crias do nexxy, Marcelo, Max extreme... esses caras ai."),
+			new GhostTapOption("Quando tu aperta errado, você vão toma miss"),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),
 			#end
-			new ScrollSpeedOption("Change your scroll speed (1 = Chart dependent)"),
-			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
-			new ResetButtonOption("Toggle pressing R to gameover."),
-			// new OffsetMenu("Get a note offset based off of your inputs!"),
-			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
+			new AccuracyDOption("Muda como a precisão é calculada. (Preciso = Simple, Complexo = Milisecond Based)")
 		]),
-		new OptionCategory("Appearance", [
-			#if desktop
-			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
-			new RainbowFPSOption("Make the FPS Counter Rainbow"),
-			new AccuracyOption("Display accuracy information."),
-			new NPSDisplayOption("Shows your current Notes Per Second."),
-			new SongPositionOption("Show the songs current position (as a bar)"),
-			new CpuStrums("CPU's strumline lights up when a note hits it."),
-			#else
-			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay.")
-			#end
+		new OptionCategory("Aparencia", [
+			new RainbowFPSOption("Faz seu FPS parecer uma bandeira Gay"),
+			new AccuracyOption("Esconde ou não, informações sobre precisão"),
+			new NPSDisplayOption("Te mostra a quantidade de notas por segundo vindo ai"),
+			new SongPositionOption("Mostra sua atual posição na musica (como uma barra)"),
+			new CpuStrums("Faz as notas do oponente fazerem brilhin quando ele acerta"),
 		]),
 		
-		new OptionCategory("Misc", [
-			#if desktop
-			new FPSOption("Toggle the FPS Counter"),
-			new ReplayOption("View replays"),
-			#end
-			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
-			new WatermarkOption("Enable and disable all watermarks from the engine."),
-			new BotPlay("Showcase your charts and mods with autoplay.")
-		])
+		new OptionCategory("Coisas", [
+			new FPSOption("Deixa o FPS aparecendo"),
+			new FlashingLightsOption("Para pessoas com epilepsia"),
+			new BotPlay("Auto explicativo eu acredito")
+		])#if mobileC ,
+
+		new OptionCategory("Config Mobile", [
+			new CustomControls("O que será que isso faz?"),
+			new About("Sobre o maravilhoso portador dessa joça para android, sim ele é br!")
+		]) #end
 		
 	];
 
