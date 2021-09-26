@@ -1,0 +1,8 @@
+diff a/source/PauseSubState.hx b/source/PauseSubState.hx	(rejected hunks)
+@@ -1,5 +1,6 @@
+ package;
+ 
++import flixel.FlxCamera;
+ import flixel.input.gamepad.FlxGamepad;
+ import openfl.Lib;
+ #if windows
