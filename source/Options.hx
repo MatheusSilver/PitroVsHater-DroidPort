@@ -292,7 +292,27 @@ class FlashingLightsOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "AntiEpilepsia " + (!FlxG.save.data.flashing ? "desligado" : "ligado");
+		return "AntiEpilepsia " + (!FlxG.save.data.flashing ? "ligado" : "desligado");
+	}
+}
+
+class FlashinLightsOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.flashin = !FlxG.save.data.flashin;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Modo brabo " + (!FlxG.save.data.flashin ? "tankar" : "chorar");
 	}
 }
 

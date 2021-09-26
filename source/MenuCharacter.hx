@@ -40,9 +40,9 @@ class MenuCharacter extends FlxSprite
 		super(x, y);
 		this.flipped = flipped;
 
-		antialiasing = true;
+		antialiasing = false;
 
-		frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
+		frames = Paths.getSparrowAtlas('campaign_menu_UI_characterss');
 
 		animation.addByPrefix('bf', "BF idle dance white", 24);
 		animation.addByPrefix('SONICFODA', "SONICFODA", 24);

@@ -361,7 +361,7 @@ class PlayState extends MusicBeatState
 						defaultCamZoom = 0.9;
 						curStage = 'stage';
 						var bg:FlxSprite = new FlxSprite(-80, 0).loadGraphic(Paths.image('stageback'));
-						bg.antialiasing = true;
+						bg.antialiasing = false;
 						bg.scrollFactor.set(0.2, 0.2);
 						bg.active = false;
 						add(bg);
@@ -369,7 +369,7 @@ class PlayState extends MusicBeatState
 						var stageFront:FlxSprite = new FlxSprite(-520, -280).loadGraphic(Paths.image('stagefront'));
 						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 						stageFront.updateHitbox();
-						stageFront.antialiasing = true;
+						stageFront.antialiasing = false;
 						stageFront.scrollFactor.set(0.9, 0.9);
 						stageFront.active = false;
 						add(stageFront);
@@ -379,7 +379,7 @@ class PlayState extends MusicBeatState
 						defaultCamZoom = 0.85;
 						curStage = 'stagehell';
 						var bg:FlxSprite = new FlxSprite(-1200, -800).loadGraphic(Paths.image('stagebackhell'));
-						bg.antialiasing = true;
+						bg.antialiasing = false;
 						bg.scrollFactor.set(0.7, 0.7);
 						bg.active = false;
 						add(bg);
@@ -387,7 +387,7 @@ class PlayState extends MusicBeatState
 						var stageFront:FlxSprite = new FlxSprite(-520, -210).loadGraphic(Paths.image('stagefronthell'));
 						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 						stageFront.updateHitbox();
-						stageFront.antialiasing = true;
+						stageFront.antialiasing = false;
 						stageFront.scrollFactor.set(0.9, 0.9);
 						stageFront.active = false;
 						add(stageFront);
@@ -398,7 +398,7 @@ class PlayState extends MusicBeatState
 					defaultCamZoom = 0.9;
 					curStage = 'stage';
 					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
-					bg.antialiasing = true;
+					bg.antialiasing = false;
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -406,7 +406,7 @@ class PlayState extends MusicBeatState
 					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 					stageFront.updateHitbox();
-					stageFront.antialiasing = true;
+					stageFront.antialiasing = false;
 					stageFront.scrollFactor.set(0.9, 0.9);
 					stageFront.active = false;
 					add(stageFront);
@@ -414,7 +414,7 @@ class PlayState extends MusicBeatState
 					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
 					stageCurtains.updateHitbox();
-					stageCurtains.antialiasing = true;
+					stageCurtains.antialiasing = false;
 					stageCurtains.scrollFactor.set(1.3, 1.3);
 					stageCurtains.active = false;
 
@@ -667,7 +667,7 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 
 		// Add Kade Engine watermark
-		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + (Main.watermarks ? " - Port YT: Matheus Silver " + MainMenuState.kadeEngineVer : ""), 16);
+		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "664" : storyDifficulty == 1 ? "Noobzito" : "Noobzito") + (" - Port YT: Matheus Silver "), 16);
 		kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		add(kadeEngineWatermark);
@@ -1296,7 +1296,7 @@ class PlayState extends MusicBeatState
 					babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
 					babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
 	
-					babyArrow.antialiasing = true;
+					babyArrow.antialiasing = false;
 					babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
 	
 					switch (Math.abs(i))
@@ -1330,7 +1330,7 @@ class PlayState extends MusicBeatState
 					babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
 					babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
 
-					babyArrow.antialiasing = true;
+					babyArrow.antialiasing = false;
 					babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
 
 					switch (Math.abs(i))
@@ -2414,16 +2414,25 @@ class PlayState extends MusicBeatState
 						if (daNote.noteType == 2)
 							{
 								FlxG.sound.play(Paths.sound('badnoise2'));
-								health -= 0.25;
+								if (!FlxG.save.data.flashin)
+									health -= 0.05;
+								if (FlxG.save.data.flashin)
+									health -= 1;
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								daRating = 'good';
-								score = 200;
+								if (!FlxG.save.data.flashin)
+									score = 200;
+								if (FlxG.save.data.flashin)
+									score = 10000;
 								ss = false;
 								goods++;
 								if (health < 2)
-									health += 0.04;
+									if (!FlxG.save.data.flashin)
+										health += 0.1;
+									if (FlxG.save.data.flashin)
+										health += 0.05;
 								if (FlxG.save.data.accuracyMod == 0)
 									totalNotesHit += 0.75;
 							}
@@ -2431,7 +2440,10 @@ class PlayState extends MusicBeatState
 						if (daNote.noteType == 2)
 							{
 								FlxG.sound.play(Paths.sound('badnoise3'));
-								health -= 0.15;
+								if (!FlxG.save.data.flashin)
+									health -= 0.05;
+								if (FlxG.save.data.flashin)
+									health -= 1;
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -2552,9 +2564,9 @@ class PlayState extends MusicBeatState
 			if (!curStage.startsWith('school'))
 			{
 				rating.setGraphicSize(Std.int(rating.width * 0.7));
-				rating.antialiasing = true;
+				rating.antialiasing = false;
 				comboSpr.setGraphicSize(Std.int(comboSpr.width * 0.7));
-				comboSpr.antialiasing = true;
+				comboSpr.antialiasing = false;
 			}
 			else
 			{
@@ -2600,7 +2612,7 @@ class PlayState extends MusicBeatState
 
 				if (!curStage.startsWith('school'))
 				{
-					numScore.antialiasing = true;
+					numScore.antialiasing = false;
 					numScore.setGraphicSize(Std.int(numScore.width * 0.5));
 				}
 				else
@@ -2808,18 +2820,6 @@ class PlayState extends MusicBeatState
 									noteMiss(shit, null);
 						}
 
-					if(dontCheck && possibleNotes.length > 0 && FlxG.save.data.ghost && !FlxG.save.data.botplay)
-					{
-						if (mashViolations > 8)
-						{
-							trace('mash violations ' + mashViolations);
-							scoreTxt.color = FlxColor.RED;
-							noteMiss(0,null);
-						}
-						else
-							mashViolations++;
-					}
-
 				}
 				
 				notes.forEachAlive(function(daNote:Note)
@@ -2976,7 +2976,7 @@ class PlayState extends MusicBeatState
 			/* if (loadRep)
 			{
 				if (controlArray[note.noteData])
-					goodNoteHit(note, false);
+					goodNoteHit(note, true);
 				else if (rep.replay.keyPresses.length > repPresses && !controlArray[note.noteData])
 				{
 					if (NearlyEquals(note.strumTime,rep.replay.keyPresses[repPresses].time, 4))
@@ -2986,32 +2986,8 @@ class PlayState extends MusicBeatState
 				}
 			} */
 			
-			if (controlArray[note.noteData])
-			{
-				goodNoteHit(note, (mashing > getKeyPresses(note)));
-				
-				/*if (mashing > getKeyPresses(note) && mashViolations <= 2)
-				{
-					mashViolations++;
-
-					goodNoteHit(note, (mashing > getKeyPresses(note)));
-				}
-				else if (mashViolations > 2)
-				{
-					// this is bad but fuck you
-					playerStrums.members[0].animation.play('static');
-					playerStrums.members[1].animation.play('static');
-					playerStrums.members[2].animation.play('static');
-					playerStrums.members[3].animation.play('static');
-					health -= 0.4;
-					trace('mash ' + mashing);
-					if (mashing != 0)
-						mashing = 0;
-				}
-				else
-					goodNoteHit(note, true);*/
-
-			}
+				if (controlArray[note.noteData])
+					goodNoteHit(note, true);
 		}
 
 		function goodNoteHit(note:Note, resetMashViolation = true):Void
@@ -3028,9 +3004,6 @@ class PlayState extends MusicBeatState
 				// the oldest notes are at the end and are removed first
 				if (!note.isSustainNote)
 					notesHitArray.unshift(Date.now());
-
-				if (!resetMashViolation && mashViolations >= 1)
-					mashViolations--;
 
 				if (mashViolations < 0)
 					mashViolations = 0;

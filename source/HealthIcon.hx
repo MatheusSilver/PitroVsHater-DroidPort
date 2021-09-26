@@ -15,7 +15,7 @@ class HealthIcon extends FlxSprite
 		
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
-		antialiasing = true;
+		antialiasing = false;
 		animation.add('bf', [26, 26], 0, false, isPlayer);
 		animation.add('bf-demon', [26, 26], 0, false, isPlayer);
 		animation.add('sonic', [24, 25], 0, false, isPlayer);

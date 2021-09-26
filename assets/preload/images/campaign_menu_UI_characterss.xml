@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="campaign_menu_UI_characters.png">
+<TextureAtlas imagePath="campaign_menu_UI_characterss.png">
 	<!-- Created with Adobe Animate version 20.0.0.17400 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="SONICFODA000" x="3025" y="1404" width="1903" height="343" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="SONICFODA000" x="0" y="0" width="1903" height="343" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
 	<SubTexture name="BF HEY!!0000" x="0" y="0" width="395" height="416" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
 	<SubTexture name="BF HEY!!0001" x="0" y="0" width="395" height="416" frameX="0" frameY="0" frameWidth="415" frameHeight="418"/>
 	<SubTexture name="BF HEY!!0002" x="405" y="0" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
-	<SubTexture name="BF HEY!!0003" x="405" y="0" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
+	<SubTexture name="BF HEY!!0003" x="405" y="00" width="413" height="410" frameX="-1" frameY="-8" frameWidth="415" frameHeight="418"/>
 	<SubTexture name="BF HEY!!0004" x="828" y="0" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
 	<SubTexture name="BF HEY!!0005" x="828" y="0" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>
 	<SubTexture name="BF HEY!!0006" x="828" y="0" width="414" height="412" frameX="-1" frameY="-6" frameWidth="415" frameHeight="418"/>

@@ -26,6 +26,7 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
+			new FlashinLightsOption("Eae man? - espero que isso funcione..."),
 			new DownscrollOption("Para crias do nexxy, Marcelo, Max extreme... esses caras ai."),
 			new GhostTapOption("Quando tu aperta errado, você vão toma miss"),
 			#if desktop
@@ -71,7 +72,7 @@ class OptionsMenu extends MusicBeatState
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
-		menuBG.antialiasing = true;
+		menuBG.antialiasing = false;
 		add(menuBG);
 
 		grpControls = new FlxTypedGroup<Alphabet>();
