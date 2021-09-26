@@ -693,7 +693,7 @@ class PlayState extends MusicBeatState
 			add(replayTxt);
 		}
 		// Literally copy-paste of the above, fu
-		botPlayState = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (FlxG.save.data.downscroll ? 100 : -100), 0, "BOTPLAY", 20);
+		botPlayState = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (FlxG.save.data.downscroll ? 100 : -100), 0, "ih ala arregou pro botplay", 20);
 		botPlayState.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		botPlayState.scrollFactor.set();
 		
@@ -2165,7 +2165,7 @@ class PlayState extends MusicBeatState
 									}
 								if (daNote.noteType == 1 || daNote.noteType == 0)
 									{
-										health -= 0.075;
+										health -= 0.2;
 										vocals.volume = 0;
 										if (theFunne)
 											noteMiss(daNote.noteData, daNote);
@@ -2388,7 +2388,10 @@ class PlayState extends MusicBeatState
 								score = -300;
 								combo = 0;
 								misses++;
-								health -= 0.2;
+								if (!FlxG.save.data.flashin)
+									health -= 0.4;
+								if (FlxG.save.data.flashin)
+									health -= 0.6;
 								ss = false;
 								shits++;
 								if (FlxG.save.data.accuracyMod == 0)
@@ -2398,13 +2401,13 @@ class PlayState extends MusicBeatState
 						if (daNote.noteType == 2)
 							{
 								FlxG.sound.play(Paths.sound('badnoise1'));
-								health -= 0.01;
+								health += 0.01;
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								daRating = 'bad';
 								score = 0;
-								health -= 0.06;
+								health += 0.06;
 								ss = false;
 								bads++;
 								if (FlxG.save.data.accuracyMod == 0)
@@ -2425,7 +2428,7 @@ class PlayState extends MusicBeatState
 								if (!FlxG.save.data.flashin)
 									score = 200;
 								if (FlxG.save.data.flashin)
-									score = 10000;
+									score = 4000;
 								ss = false;
 								goods++;
 								if (health < 2)
@@ -2441,15 +2444,17 @@ class PlayState extends MusicBeatState
 							{
 								FlxG.sound.play(Paths.sound('badnoise3'));
 								if (!FlxG.save.data.flashin)
-									health -= 0.05;
+									health -= 0.3;
 								if (FlxG.save.data.flashin)
 									health -= 1;
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								if (health < 2)
-									health += 0.1;
-								if (FlxG.save.data.accuracyMod == 0)
+									if (!FlxG.save.data.flashin)
+										health += 0.1;
+									if (FlxG.save.data.flashin)
+										health += 0.05;								if (FlxG.save.data.accuracyMod == 0)
 									totalNotesHit += 1;
 								sicks++;	
 							}					
@@ -2726,6 +2731,7 @@ class PlayState extends MusicBeatState
 					});
 				}
 		 
+		 
 				// PRESSES, check for note hits
 				if (pressArray.contains(true) && /*!boyfriend.stunned && */ generatedMusic)
 				{
@@ -2804,11 +2810,14 @@ class PlayState extends MusicBeatState
 						}
 						for (coolNote in possibleNotes)
 						{
+							trace('notedata :     ${coolNote.noteData}');
+							trace('pressarray :  ${pressArray}');
 							if (pressArray[coolNote.noteData])
 							{
 								if (mashViolations != 0)
 									mashViolations--;
 								scoreTxt.color = FlxColor.WHITE;
+								var noteDiff:Float = -(coolNote.strumTime - Conductor.songPosition);
 								goodNoteHit(coolNote);
 							}
 						}
@@ -2875,7 +2884,10 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
-			health -= 0.04;
+			if (!FlxG.save.data.flashin)
+				health -= 0.05;
+			if (FlxG.save.data.flashin)
+				health -= 0.3;
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
 				gf.playAnim('sad');
@@ -2986,8 +2998,11 @@ class PlayState extends MusicBeatState
 				}
 			} */
 			
-				if (controlArray[note.noteData])
-					goodNoteHit(note, true);
+			if (controlArray[note.noteData])
+			{
+				goodNoteHit(note, true);
+
+			}
 		}
 
 		function goodNoteHit(note:Note, resetMashViolation = true):Void

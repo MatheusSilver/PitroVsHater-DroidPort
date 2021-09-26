@@ -86,7 +86,7 @@ class CustomControls extends Option
 	}
 	private override function updateDisplay():String
 	{
-		return "controls";
+		return "controles";
 	}
 
 }
@@ -312,7 +312,7 @@ class FlashinLightsOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Modo brabo " + (!FlxG.save.data.flashin ? "tankar" : "chorar");
+		return "Modo brabo " + (!FlxG.save.data.flashin ? "chorar" : "tankar");
 	}
 }
 
