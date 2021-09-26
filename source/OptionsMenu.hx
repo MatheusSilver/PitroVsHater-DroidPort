@@ -27,17 +27,17 @@ class OptionsMenu extends MusicBeatState
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
 			new DownscrollOption("Para crias do nexxy, Marcelo, Max extreme... esses caras ai."),
-			new GhostTapOption("Quando tu aperta errado, vocÍ v„o toma miss"),
+			new GhostTapOption("Quando tu aperta errado, voc√™ v√£o toma miss"),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),
 			#end
-			new AccuracyDOption("Muda como a precis„o È calculada. (Preciso = Simple, Complexo = Milisecond Based)")
+			new AccuracyDOption("Muda como a precis√£o √© calculada. (Preciso = Simple, Complexo = Milisecond Based)")
 		]),
 		new OptionCategory("Aparencia", [
 			new RainbowFPSOption("Faz seu FPS parecer uma bandeira Gay"),
-			new AccuracyOption("Esconde ou n„o, informaÁıes sobre precis„o"),
+			new AccuracyOption("Esconde ou n√£o, informa√ß√µes sobre precis√£o"),
 			new NPSDisplayOption("Te mostra a quantidade de notas por segundo vindo ai"),
-			new SongPositionOption("Mostra sua atual posiÁ„o na musica (como uma barra)"),
+			new SongPositionOption("Mostra sua atual posi√ß√£o na musica (como uma barra)"),
 			new CpuStrums("Faz as notas do oponente fazerem brilhin quando ele acerta"),
 		]),
 		
@@ -48,8 +48,8 @@ class OptionsMenu extends MusicBeatState
 		])#if mobileC ,
 
 		new OptionCategory("Config Mobile", [
-			new CustomControls("O que ser· que isso faz?"),
-			new About("Sobre o maravilhoso portador dessa joÁa para android, sim ele È br!")
+			new CustomControls("O que ser√° que isso faz?"),
+			new About("Sobre o maravilhoso portador dessa jo√ßa para android, sim ele √© br!")
 		]) #end
 		
 	];
